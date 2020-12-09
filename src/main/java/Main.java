@@ -1,7 +1,7 @@
 public class Main {
 
     public static void main(String[] args) throws InterruptedException {
-       
+
         CallCenter callcenter = new CallCenter();
 
         Runnable atsTask = callcenter::atsWork;
@@ -11,12 +11,10 @@ public class Main {
         Thread operator1 = new Thread(null, operatorTask, "Оператор 1");
         Thread operator2 = new Thread(null, operatorTask, "Оператор 2");
 
-        ats.start();
-
-        Thread.sleep(10000);
 
         operator1.start();
         operator2.start();
+        ats.start();
 
         ats.join();
         operator1.join();
@@ -24,5 +22,4 @@ public class Main {
 
         System.out.println(Thread.currentThread().getName() + " завершает работу");
     }
-
 }

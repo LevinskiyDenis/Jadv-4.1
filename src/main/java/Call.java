@@ -11,4 +11,8 @@ public class Call {
     public String getName() {
         return name;
     }
+
+    public static int getNumberOfCalls() {
+        return numberOfCalls;
+    }
 }
