@@ -12,9 +12,10 @@ public class Main {
         Thread operator2 = new Thread(null, operatorTask, "Оператор 2");
 
 
+        ats.start();
+        Thread.sleep(6000);
         operator1.start();
         operator2.start();
-        ats.start();
 
         ats.join();
         operator1.join();
